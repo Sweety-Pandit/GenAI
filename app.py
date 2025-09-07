@@ -49,6 +49,7 @@ for idx, row in df.iterrows():
 
     # Show thinking message
     print(f"[{idx+1}/{len(df)}] Thinking...", end="\r", flush=True)
+    print(prompt)
 
     try:
         response = model.generate_content(prompt)
@@ -66,3 +67,4 @@ with open("patient_summaries.json", "w", encoding="utf-8") as f:
     json.dump(records, f, indent=4, ensure_ascii=False)
 
 print("\n✅ Done. JSON saved as patient_summaries.json")
+
